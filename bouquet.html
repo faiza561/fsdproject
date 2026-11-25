@@ -1,0 +1,1842 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Petal & Bloom | Artisan Flower Bouquet Boutique</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <style>
+    :root {
+      --primary: #9e2a4b;
+      --primary-dark: #7a1f39;
+      --primary-light: #fbebf0;
+      --accent: #2d5a43;
+      --accent-light: #e8f3ed;
+      --gold: #d4a373;
+      --bg: #fdfaf6;
+      --surface: #ffffff;
+      --text: #2d2627;
+      --text-muted: #6e6466;
+      --border: #eededc;
+      --shadow-sm: 0 2px 8px rgba(158, 42, 75, 0.06);
+      --shadow-md: 0 8px 24px rgba(158, 42, 75, 0.09);
+      --shadow-lg: 0 16px 40px rgba(158, 42, 75, 0.14);
+      --radius: 16px;
+      --transition: all 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    h1, h2, h3, h4, .serif {
+      font-family: 'Playfair Display', Georgia, serif;
+    }
+
+    /* TOP ANNOUNCEMENT BAR */
+    .announcement-bar {
+      background: linear-gradient(90deg, #7a1f39, #9e2a4b, #2d5a43);
+      color: #fff;
+      text-align: center;
+      padding: 9px 16px;
+      font-size: 0.85rem;
+      font-weight: 500;
+      letter-spacing: 0.5px;
+    }
+
+    /* NAVBAR */
+    header.navbar {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(253, 250, 246, 0.94);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid var(--border);
+      padding: 16px 6%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: var(--transition);
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      color: var(--primary);
+    }
+
+    .brand-icon {
+      width: 38px;
+      height: 38px;
+      background: var(--primary-light);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 20px;
+    }
+
+    .brand-text h1 {
+      font-size: 1.55rem;
+      font-weight: 700;
+      color: var(--primary);
+      line-height: 1;
+    }
+
+    .brand-text span {
+      font-size: 0.72rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    nav.nav-links {
+      display: flex;
+      gap: 28px;
+      align-items: center;
+    }
+
+    nav.nav-links a {
+      text-decoration: none;
+      color: var(--text);
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: var(--transition);
+    }
+
+    nav.nav-links a:hover, nav.nav-links a.active {
+      color: var(--primary);
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .cart-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 9px 18px;
+      border-radius: 30px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 0.9rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      box-shadow: var(--shadow-sm);
+      transition: var(--transition);
+    }
+
+    .cart-btn:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .cart-count {
+      background: var(--primary);
+      color: white;
+      font-size: 0.75rem;
+      padding: 2px 7px;
+      border-radius: 12px;
+    }
+
+    /* HERO SECTION */
+    .hero {
+      padding: 70px 6% 80px;
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 50px;
+      align-items: center;
+      max-width: 1360px;
+      margin: 0 auto;
+    }
+
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--primary-light);
+      color: var(--primary);
+      padding: 6px 16px;
+      border-radius: 30px;
+      font-size: 0.82rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .hero h2 {
+      font-size: 3.4rem;
+      line-height: 1.15;
+      color: #1a1215;
+      margin-bottom: 22px;
+    }
+
+    .hero h2 em {
+      color: var(--primary);
+      font-style: italic;
+    }
+
+    .hero p {
+      font-size: 1.12rem;
+      color: var(--text-muted);
+      margin-bottom: 34px;
+      max-width: 540px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .btn {
+      padding: 13px 28px;
+      border-radius: 30px;
+      font-size: 0.95rem;
+      font-weight: 600;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      border: none;
+      transition: var(--transition);
+    }
+
+    .btn-primary {
+      background: var(--primary);
+      color: white;
+      box-shadow: 0 4px 16px rgba(158, 42, 75, 0.35);
+    }
+
+    .btn-primary:hover {
+      background: var(--primary-dark);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(158, 42, 75, 0.45);
+    }
+
+    .btn-secondary {
+      background: var(--surface);
+      color: var(--text);
+      border: 1px solid var(--border);
+    }
+
+    .btn-secondary:hover {
+      border-color: var(--primary);
+      color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .hero-card {
+      position: relative;
+    }
+
+    .hero-card-img-wrap {
+      border-radius: 28px;
+      overflow: hidden;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      background: #f0e6e4;
+      height: 480px;
+    }
+
+    .hero-card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+      transition: transform 0.6s ease;
+    }
+
+    .hero-card-img-wrap:hover img {
+      transform: scale(1.04);
+    }
+
+    .hero-floating-tag {
+      position: absolute;
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+      background: rgba(255, 255, 255, 0.92);
+      backdrop-filter: blur(10px);
+      padding: 18px 22px;
+      border-radius: 18px;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .floating-tag-info h4 {
+      font-size: 1.05rem;
+      color: var(--text);
+    }
+
+    .floating-tag-info span {
+      font-size: 0.8rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .floating-tag-price {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    /* HIGHLIGHT STATS */
+    .highlights {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      max-width: 1360px;
+      margin: 0 auto 60px;
+      padding: 0 6%;
+    }
+
+    .highlight-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      padding: 22px;
+      border-radius: var(--radius);
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .highlight-icon {
+      font-size: 28px;
+      width: 50px;
+      height: 50px;
+      border-radius: 12px;
+      background: var(--accent-light);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+    }
+
+    .highlight-content h4 {
+      font-size: 0.98rem;
+      margin-bottom: 2px;
+    }
+
+    .highlight-content p {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    /* SECTION TITLE */
+    .section-header {
+      text-align: center;
+      max-width: 680px;
+      margin: 0 auto 40px;
+      padding: 0 20px;
+    }
+
+    .section-subtitle {
+      text-transform: uppercase;
+      font-size: 0.8rem;
+      letter-spacing: 2px;
+      color: var(--primary);
+      font-weight: 700;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .section-title {
+      font-size: 2.3rem;
+      color: #1a1215;
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      color: var(--text-muted);
+      font-size: 0.98rem;
+    }
+
+    /* FILTER TABS & SEARCH */
+    .catalog-controls {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: center;
+      gap: 16px;
+      max-width: 1360px;
+      margin: 0 auto 32px;
+      padding: 0 6%;
+    }
+
+    .filter-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text);
+      padding: 8px 18px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 0.88rem;
+      font-weight: 500;
+      transition: var(--transition);
+    }
+
+    .filter-btn:hover, .filter-btn.active {
+      background: var(--primary);
+      color: white;
+      border-color: var(--primary);
+      box-shadow: 0 2px 10px rgba(158, 42, 75, 0.25);
+    }
+
+    .search-sort {
+      display: flex;
+      gap: 12px;
+    }
+
+    .search-box input {
+      padding: 9px 16px;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      font-size: 0.88rem;
+      font-family: inherit;
+      outline: none;
+      width: 220px;
+      background: var(--surface);
+      transition: var(--transition);
+    }
+
+    .search-box input:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(158, 42, 75, 0.12);
+    }
+
+    /* BOUQUET GRID */
+    .bouquet-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(290px, 1fr));
+      gap: 28px;
+      max-width: 1360px;
+      margin: 0 auto 80px;
+      padding: 0 6%;
+    }
+
+    .bouquet-card {
+      background: var(--surface);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow: hidden;
+      box-shadow: var(--shadow-sm);
+      display: flex;
+      flex-direction: column;
+      transition: var(--transition);
+      position: relative;
+    }
+
+    .bouquet-card:hover {
+      transform: translateY(-6px);
+      box-shadow: var(--shadow-md);
+      border-color: #e5b9c5;
+    }
+
+    .card-badge {
+      position: absolute;
+      top: 14px;
+      left: 14px;
+      z-index: 2;
+      background: var(--primary);
+      color: white;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .card-img-wrap {
+      position: relative;
+      width: 100%;
+      height: 250px;
+      overflow: hidden;
+      background: #f7ede9;
+    }
+
+    .card-img-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .bouquet-card:hover .card-img-wrap img {
+      transform: scale(1.08);
+    }
+
+    .card-body {
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+
+    .card-category {
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
+
+    .card-title {
+      font-size: 1.22rem;
+      margin-bottom: 8px;
+      color: #1a1215;
+    }
+
+    .card-flowers {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 12px;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
+    .card-rating {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+
+    .stars {
+      color: #f4a261;
+      font-weight: bold;
+    }
+
+    .card-footer {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .price-box {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+    }
+
+    .current-price {
+      font-size: 1.3rem;
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .original-price {
+      font-size: 0.88rem;
+      text-decoration: line-through;
+      color: var(--text-muted);
+    }
+
+    .btn-add {
+      background: var(--primary-light);
+      color: var(--primary);
+      border: 1px solid #ebd0d8;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: var(--transition);
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .btn-add:hover {
+      background: var(--primary);
+      color: white;
+    }
+
+    /* BUILD YOUR OWN BOUQUET WORKSHOP SECTION */
+    .workshop-section {
+      background: linear-gradient(180deg, #fbf4f0 0%, #ffffff 100%);
+      padding: 90px 6%;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .workshop-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.3fr 0.9fr;
+      gap: 40px;
+    }
+
+    .workshop-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .step-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .step-header {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin-bottom: 16px;
+    }
+
+    .step-number {
+      width: 32px;
+      height: 32px;
+      background: var(--accent);
+      color: white;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .step-header h3 {
+      font-size: 1.15rem;
+    }
+
+    .ingredient-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+      gap: 12px;
+    }
+
+    .ingredient-item {
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 10px;
+      text-align: center;
+      cursor: pointer;
+      transition: var(--transition);
+      background: var(--surface);
+    }
+
+    .ingredient-item:hover {
+      border-color: var(--primary);
+      transform: translateY(-2px);
+    }
+
+    .ingredient-item.selected {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      box-shadow: 0 2px 8px rgba(158, 42, 75, 0.15);
+    }
+
+    .ingredient-emoji {
+      font-size: 24px;
+      margin-bottom: 6px;
+    }
+
+    .ingredient-name {
+      font-size: 0.82rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .ingredient-price {
+      font-size: 0.75rem;
+      color: var(--accent);
+      font-weight: 700;
+    }
+
+    .workshop-summary {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 28px;
+      box-shadow: var(--shadow-md);
+      position: sticky;
+      top: 90px;
+      height: fit-content;
+    }
+
+    .summary-title {
+      font-size: 1.35rem;
+      margin-bottom: 16px;
+      padding-bottom: 12px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .selected-list {
+      list-style: none;
+      margin-bottom: 20px;
+      font-size: 0.9rem;
+    }
+
+    .selected-list li {
+      display: flex;
+      justify-content: space-between;
+      padding: 8px 0;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .summary-total {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: var(--primary);
+      padding: 16px 0;
+      border-top: 2px solid var(--border);
+      margin-bottom: 20px;
+    }
+
+    /* ORDER TRACKING SECTION */
+    .tracking-section {
+      padding: 80px 6%;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: center;
+    }
+
+    .tracking-box {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 36px 30px;
+      box-shadow: var(--shadow-md);
+      margin-top: 30px;
+    }
+
+    .tracking-input-group {
+      display: flex;
+      gap: 12px;
+      max-width: 520px;
+      margin: 0 auto 30px;
+    }
+
+    .tracking-input-group input {
+      flex: 1;
+      padding: 12px 18px;
+      border: 1px solid var(--border);
+      border-radius: 30px;
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .tracking-input-group input:focus {
+      border-color: var(--primary);
+    }
+
+    .timeline {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin-top: 40px;
+    }
+
+    .timeline::before {
+      content: '';
+      position: absolute;
+      top: 20px;
+      left: 10%;
+      right: 10%;
+      height: 4px;
+      background: #e2d7d5;
+      z-index: 1;
+    }
+
+    .timeline-progress {
+      position: absolute;
+      top: 20px;
+      left: 10%;
+      width: 65%;
+      height: 4px;
+      background: var(--accent);
+      z-index: 2;
+      transition: width 0.5s ease;
+    }
+
+    .timeline-step {
+      position: relative;
+      z-index: 3;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 120px;
+    }
+
+    .step-circle {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 3px solid #e2d7d5;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      margin-bottom: 10px;
+      transition: var(--transition);
+    }
+
+    .timeline-step.completed .step-circle {
+      border-color: var(--accent);
+      background: var(--accent-light);
+      color: var(--accent);
+    }
+
+    .timeline-step.active .step-circle {
+      border-color: var(--primary);
+      background: var(--primary-light);
+      color: var(--primary);
+      box-shadow: 0 0 0 4px rgba(158, 42, 75, 0.2);
+    }
+
+    .step-label {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }
+
+    .timeline-step.active .step-label, .timeline-step.completed .step-label {
+      color: var(--text);
+    }
+
+    /* CART DRAWER */
+    .cart-drawer-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 200;
+      backdrop-filter: blur(4px);
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .cart-drawer-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .cart-drawer {
+      position: fixed;
+      top: 0;
+      right: -440px;
+      width: 420px;
+      max-width: 90vw;
+      height: 100%;
+      background: var(--surface);
+      z-index: 201;
+      box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+      display: flex;
+      flex-direction: column;
+      transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .cart-drawer.open {
+      right: 0;
+    }
+
+    .cart-drawer-header {
+      padding: 20px 24px;
+      border-bottom: 1px solid var(--border);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .close-cart {
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+      color: var(--text-muted);
+    }
+
+    .cart-items {
+      flex: 1;
+      overflow-y: auto;
+      padding: 20px 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+
+    .cart-item {
+      display: flex;
+      gap: 14px;
+      padding-bottom: 16px;
+      border-bottom: 1px solid var(--border);
+      align-items: center;
+    }
+
+    .cart-item-img {
+      width: 65px;
+      height: 65px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+
+    .cart-item-info {
+      flex: 1;
+    }
+
+    .cart-item-title {
+      font-size: 0.92rem;
+      font-weight: 600;
+      margin-bottom: 4px;
+    }
+
+    .cart-item-price {
+      font-size: 0.85rem;
+      color: var(--primary);
+      font-weight: 700;
+    }
+
+    .qty-controls {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .qty-btn {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--bg);
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    .cart-drawer-footer {
+      padding: 20px 24px;
+      border-top: 1px solid var(--border);
+      background: var(--bg);
+    }
+
+    .cart-drawer-subtotal {
+      display: flex;
+      justify-content: space-between;
+      font-size: 1.15rem;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 300;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      opacity: 0;
+      visibility: hidden;
+      transition: var(--transition);
+    }
+
+    .modal-overlay.open {
+      opacity: 1;
+      visibility: visible;
+    }
+
+    .modal-box {
+      background: var(--surface);
+      border-radius: 20px;
+      max-width: 500px;
+      width: 100%;
+      padding: 30px;
+      box-shadow: var(--shadow-lg);
+      position: relative;
+      transform: scale(0.95);
+      transition: var(--transition);
+    }
+
+    .modal-overlay.open .modal-box {
+      transform: scale(1);
+    }
+
+    .modal-close {
+      position: absolute;
+      top: 18px;
+      right: 20px;
+      background: none;
+      border: none;
+      font-size: 22px;
+      cursor: pointer;
+    }
+
+    /* FOOTER */
+    footer {
+      background: #1a1416;
+      color: #ded6d8;
+      padding: 70px 6% 30px;
+      border-top: 1px solid #332629;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr repeat(3, 1fr);
+      gap: 40px;
+      max-width: 1360px;
+      margin: 0 auto 50px;
+    }
+
+    .footer-brand h2 {
+      color: #fff;
+      font-size: 1.6rem;
+      margin-bottom: 12px;
+    }
+
+    .footer-brand p {
+      font-size: 0.9rem;
+      color: #a89ca0;
+      max-width: 320px;
+    }
+
+    .footer-col h4 {
+      color: #fff;
+      font-size: 1.05rem;
+      margin-bottom: 16px;
+    }
+
+    .footer-col ul {
+      list-style: none;
+    }
+
+    .footer-col ul li {
+      margin-bottom: 10px;
+    }
+
+    .footer-col ul li a {
+      color: #a89ca0;
+      text-decoration: none;
+      font-size: 0.88rem;
+      transition: var(--transition);
+    }
+
+    .footer-col ul li a:hover {
+      color: #fff;
+    }
+
+    .footer-bottom {
+      text-align: center;
+      padding-top: 30px;
+      border-top: 1px solid #2b1f23;
+      font-size: 0.82rem;
+      color: #88787c;
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 960px) {
+      .hero {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-buttons {
+        justify-content: center;
+      }
+      .hero p {
+        margin: 0 auto 30px;
+      }
+      .workshop-container {
+        grid-template-columns: 1fr;
+      }
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .timeline {
+        flex-direction: column;
+        gap: 20px;
+        align-items: flex-start;
+      }
+      .timeline::before {
+        display: none;
+      }
+      .timeline-step {
+        flex-direction: row;
+        gap: 12px;
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Announcement Bar -->
+  <div class="announcement-bar">
+    🌿 Fresh Morning Harvest: Order before 2 PM for Same-Day Hand-Crafted Bouquet Courier Delivery! 🌸
+  </div>
+
+  <!-- Header Navbar -->
+  <header class="navbar">
+    <a href="#" class="brand">
+      <div class="brand-icon">💐</div>
+      <div class="brand-text">
+        <h1>Petal & Bloom</h1>
+        <span>Artisan Florist Atelier</span>
+      </div>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#catalog" class="active">Bouquets</a>
+      <a href="#workshop">Custom Studio</a>
+      <a href="#tracking">Track Order</a>
+      <a href="#about">Our Story</a>
+    </nav>
+
+    <div class="nav-actions">
+      <button class="cart-btn" onclick="toggleCart(true)">
+        🛒 Cart <span class="cart-count" id="navCartCount">0</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <div class="hero-content">
+      <div class="hero-badge">✨ Hand-Tied Luxury Floristry</div>
+      <h2>Artisan Bouquets Crafted to <em>Speak Your Heart</em></h2>
+      <p>From velvety Ecuadorian garden roses to fresh morning peonies and delicate meadow blooms. Each arrangement is custom wrapped in artisan paper with satin ribbon and personalized calligraphy.</p>
+      <div class="hero-buttons">
+        <a href="#catalog" class="btn btn-primary">Explore Bouquets 🌸</a>
+        <a href="#workshop" class="btn btn-secondary">Build Custom Bouquet 🎨</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-img-wrap">
+        <img src="https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=800&q=80" alt="Elysian Scarlet Roses">
+        <div class="hero-floating-tag">
+          <div class="floating-tag-info">
+            <h4>Elysian Scarlet Rose Symphony</h4>
+            <span>24 Ecuadorian Long-Stem Roses</span>
+          </div>
+          <div class="floating-tag-price">$69.99</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Highlight Badges -->
+  <div class="highlights">
+    <div class="highlight-card">
+      <div class="highlight-icon">🚀</div>
+      <div class="highlight-content">
+        <h4>Same-Day Delivery</h4>
+        <p>Swift climate-controlled courier van</p>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">💧</div>
+      <div class="highlight-content">
+        <h4>7-Day Freshness Guarantee</h4>
+        <p>Harvested daily from local growers</p>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">💌</div>
+      <div class="highlight-content">
+        <h4>Complimentary Gift Card</h4>
+        <p>Custom handwritten calligraphy</p>
+      </div>
+    </div>
+    <div class="highlight-card">
+      <div class="highlight-icon">🌿</div>
+      <div class="highlight-content">
+        <h4>100% Eco-Friendly</h4>
+        <p>Biodegradable paper & organic twine</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- BOUQUET CATALOG -->
+  <section id="catalog" style="padding-top: 40px;">
+    <div class="section-header">
+      <span class="section-subtitle">Curated Floral Collections</span>
+      <h2 class="section-title">Hand-Tied Seasonal Bouquets</h2>
+      <p class="section-desc">Designed by our master florists using freshest seasonal botanicals. Select from our signature arrangements below.</p>
+    </div>
+
+    <div class="catalog-controls">
+      <div class="filter-tabs" id="filterTabs">
+        <button class="filter-btn active" onclick="filterCategory('all', this)">All Bouquets</button>
+        <button class="filter-btn" onclick="filterCategory('romantic', this)">Romantic & Anniversary</button>
+        <button class="filter-btn" onclick="filterCategory('birthday', this)">Birthday Joy</button>
+        <button class="filter-btn" onclick="filterCategory('luxury', this)">Luxury & Weddings</button>
+        <button class="filter-btn" onclick="filterCategory('sympathy', this)">Sympathy & Serenity</button>
+      </div>
+      <div class="search-sort">
+        <div class="search-box">
+          <input type="text" id="searchInput" placeholder="Search roses, lilies, orchids..." oninput="handleSearch()">
+        </div>
+      </div>
+    </div>
+
+    <div class="bouquet-grid" id="bouquetGrid">
+      <!-- Generated Dynamically via JS -->
+    </div>
+  </section>
+
+  <!-- CUSTOM BOUQUET WORKSHOP -->
+  <section id="workshop" class="workshop-section">
+    <div class="section-header">
+      <span class="section-subtitle">Interactive Florist Studio</span>
+      <h2 class="section-title">Build Your Own Custom Bouquet</h2>
+      <p class="section-desc">Handpick every single flower, foliage, wrapping texture, and ribbon color. Watch your customized bouquet calculate in real time!</p>
+    </div>
+
+    <div class="workshop-container">
+      <div class="workshop-steps">
+        <!-- Step 1: Focal Flower -->
+        <div class="step-card">
+          <div class="step-header">
+            <div class="step-number">1</div>
+            <div>
+              <h3>Choose Focal Blooms</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">The primary centerpiece flowers for your bouquet</p>
+            </div>
+          </div>
+          <div class="ingredient-grid" id="focalGrid">
+            <div class="ingredient-item selected" onclick="selectIngredient('focal', 'Ecuadorian Red Roses', 28.00, this)">
+              <div class="ingredient-emoji">🌹</div>
+              <div class="ingredient-name">Red Roses</div>
+              <div class="ingredient-price">+$28.00</div>
+            </div>
+            <div class="ingredient-item" onclick="selectIngredient('focal', 'Blush Peonies', 32.00, this)">
+              <div class="ingredient-emoji">🌸</div>
+              <div class="ingredient-name">Blush Peonies</div>
+              <div class="ingredient-price">+$32.00</div>
+            </div>
+            <div class="ingredient-item" onclick="selectIngredient('focal', 'Oriental Lilies', 24.00, this)">
+              <div class="ingredient-emoji">🌺</div>
+              <div class="ingredient-name">Oriental Lilies</div>
+              <div class="ingredient-price">+$24.00</div>
+            </div>
+            <div class="ingredient-item" onclick="selectIngredient('focal', 'Tuscan Sunflowers', 22.00, this)">
+              <div class="ingredient-emoji">🌻</div>
+              <div class="ingredient-name">Sunflowers</div>
+              <div class="ingredient-price">+$22.00</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 2: Filler Flowers -->
+        <div class="step-card">
+          <div class="step-header">
+            <div class="step-number">2</div>
+            <div>
+              <h3>Select Accents & Fillers</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Delicate textures that complement focal blooms</p>
+            </div>
+          </div>
+          <div class="ingredient-grid" id="fillerGrid">
+            <div class="ingredient-item selected" onclick="selectIngredient('filler', 'Cloud Baby\'s Breath', 9.00, this)">
+              <div class="ingredient-emoji">☁️</div>
+              <div class="ingredient-name">Baby's Breath</div>
+              <div class="ingredient-price">+$9.00</div>
+            </div>
+            <div class="ingredient-item" onclick="selectIngredient('filler', 'Lavender Sprigs', 11.00, this)">
+              <div class="ingredient-emoji">🌾</div>
+              <div class="ingredient-name">Lavender</div>
+              <div class="ingredient-price">+$11.00</div>
+            </div>
+            <div class="ingredient-item" onclick="selectIngredient('filler', 'Chamomile Daisies', 10.00, this)">
+              <div class="ingredient-emoji">🌼</div>
+              <div class="ingredient-name">Chamomile</div>
+              <div class="ingredient-price">+$10.00</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 3: Greenery & Foliage -->
+        <div class="step-card">
+          <div class="step-header">
+            <div class="step-number">3</div>
+            <div>
+              <h3>Choose Greenery & Foliage</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Aromatic eucalyptus, ferns, and framing leaves</p>
+            </div>
+          </div>
+          <div class="ingredient-grid" id="greeneryGrid">
+            <div class="ingredient-item selected" onclick="selectIngredient('greenery', 'Silver Dollar Eucalyptus', 8.00, this)">
+              <div class="ingredient-emoji">🌿</div>
+              <div class="ingredient-name">Eucalyptus</div>
+              <div class="ingredient-price">+$8.00</div>
+            </div>
+            <div class="ingredient-item" onclick="selectIngredient('greenery', 'Italian Ruscus', 7.50, this)">
+              <div class="ingredient-emoji">🍃</div>
+              <div class="ingredient-name">Italian Ruscus</div>
+              <div class="ingredient-price">+$7.50</div>
+            </div>
+            <div class="ingredient-item" onclick="selectIngredient('greenery', 'Feather Ferns', 6.00, this)">
+              <div class="ingredient-emoji">🌱</div>
+              <div class="ingredient-name">Feather Ferns</div>
+              <div class="ingredient-price">+$6.00</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Step 4: Wrapping & Ribbon -->
+        <div class="step-card">
+          <div class="step-header">
+            <div class="step-number">4</div>
+            <div>
+              <h3>Artisan Paper & Ribbon Trim</h3>
+              <p style="font-size: 0.82rem; color: var(--text-muted);">Presentation packaging and silk ribbon finish</p>
+            </div>
+          </div>
+          <div class="ingredient-grid" id="wrapGrid">
+            <div class="ingredient-item selected" onclick="selectIngredient('wrap', 'Matte Midnight & Silk Bow', 6.00, this)">
+              <div class="ingredient-emoji">🎀</div>
+              <div class="ingredient-name">Midnight & Silk</div>
+              <div class="ingredient-price">+$6.00</div>
+            </div>
+            <div class="ingredient-item" onclick="selectIngredient('wrap', 'Natural Kraft & Jute Twine', 4.50, this)">
+              <div class="ingredient-emoji">📜</div>
+              <div class="ingredient-name">Kraft & Jute</div>
+              <div class="ingredient-price">+$4.50</div>
+            </div>
+            <div class="ingredient-item" onclick="selectIngredient('wrap', 'Blush Parchment & Gold Ribbon', 7.00, this)">
+              <div class="ingredient-emoji">✨</div>
+              <div class="ingredient-name">Blush & Gold</div>
+              <div class="ingredient-price">+$7.00</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Workshop Summary Box -->
+      <div class="workshop-summary">
+        <h3 class="summary-title">💐 Your Custom Bouquet</h3>
+        <ul class="selected-list">
+          <li><span>Base Artisan Assembly</span><span>$15.00</span></li>
+          <li><span id="focalSummary">🌹 Red Roses</span><span id="focalPriceSummary">$28.00</span></li>
+          <li><span id="fillerSummary">☁️ Baby's Breath</span><span id="fillerPriceSummary">$9.00</span></li>
+          <li><span id="greenerySummary">🌿 Eucalyptus</span><span id="greeneryPriceSummary">$8.00</span></li>
+          <li><span id="wrapSummary">🎀 Midnight & Silk</span><span id="wrapPriceSummary">$6.00</span></li>
+        </ul>
+        <div class="summary-total">
+          <span>Estimated Total:</span>
+          <span id="customTotalDisplay">$66.00</span>
+        </div>
+        <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="addCustomBouquetToCart()">
+          Add Custom Bouquet to Cart 🛒
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- LIVE ORDER TRACKING -->
+  <section id="tracking" class="tracking-section">
+    <div class="section-header">
+      <span class="section-subtitle">Real-Time Dispatching</span>
+      <h2 class="section-title">Courier Order Tracking</h2>
+      <p class="section-desc">Track your bouquet journey from floral cold room assembly to doorstep hand-delivery.</p>
+    </div>
+
+    <div class="tracking-box">
+      <div class="tracking-input-group">
+        <input type="text" id="orderTrackInput" value="PB-88421" placeholder="Enter Order ID (e.g. PB-88421)">
+        <button class="btn btn-primary" onclick="trackOrder()">Track Now 🔍</button>
+      </div>
+
+      <div style="font-weight: 600; font-size: 0.95rem; margin-bottom: 6px;" id="trackStatusText">
+        Order Status: <span style="color: var(--accent);">Out for Courier Delivery 🚚</span>
+      </div>
+      <p style="font-size: 0.84rem; color: var(--text-muted); margin-bottom: 24px;">Recipient: Faiza Arfa • Express Climate-Controlled Van #04</p>
+
+      <div class="timeline">
+        <div class="timeline-progress" id="timelineBar"></div>
+        <div class="timeline-step completed">
+          <div class="step-circle">✓</div>
+          <div class="step-label">Order Received</div>
+        </div>
+        <div class="timeline-step completed">
+          <div class="step-circle">✂️</div>
+          <div class="step-label">Artisan Floral Tied</div>
+        </div>
+        <div class="timeline-step active">
+          <div class="step-circle">🚚</div>
+          <div class="step-label">On Courier Route</div>
+        </div>
+        <div class="timeline-step">
+          <div class="step-circle">🏡</div>
+          <div class="step-label">Delivered</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer id="about">
+    <div class="footer-grid">
+      <div class="footer-brand">
+        <h2>Petal & Bloom</h2>
+        <p>A premier artisan flower bouquet boutique delivering handcrafted botanical elegance for love, celebration, and moments that matter.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Occasions</h4>
+        <ul>
+          <li><a href="#catalog">Anniversary & Romance</a></li>
+          <li><a href="#catalog">Birthdays & Joy</a></li>
+          <li><a href="#catalog">Weddings & Luxe</a></li>
+          <li><a href="#catalog">Sympathy & Serenity</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Services</h4>
+        <ul>
+          <li><a href="#workshop">Custom Bouquet Workshop</a></li>
+          <li><a href="#tracking">Courier Tracking</a></li>
+          <li><a href="#">Corporate Events</a></li>
+          <li><a href="#">Monthly Flower Club</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Full Stack Practical</h4>
+        <ul>
+          <li><span style="color: #d4a373;">HTML5 & CSS3 Design System</span></li>
+          <li><span style="color: #d4a373;">JavaScript & React UI</span></li>
+          <li><span style="color: #d4a373;">Node.js & Express REST API</span></li>
+          <li><span style="color: #d4a373;">MySQL Database & Fallback</span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      &copy; 2026 Petal & Bloom Florist Atelier. Full Stack Practical Project (HTML, CSS, JS, React, Node, Express, MySQL).
+    </div>
+  </footer>
+
+  <!-- CART SLIDE-OUT DRAWER -->
+  <div class="cart-drawer-overlay" id="cartOverlay" onclick="toggleCart(false)"></div>
+  <aside class="cart-drawer" id="cartDrawer">
+    <div class="cart-drawer-header">
+      <h3 class="serif">Your Floral Basket 🌸</h3>
+      <button class="close-cart" onclick="toggleCart(false)">&times;</button>
+    </div>
+    <div class="cart-items" id="cartItemsList">
+      <!-- Items dynamically populated -->
+    </div>
+    <div class="cart-drawer-footer">
+      <div class="cart-drawer-subtotal">
+        <span>Subtotal:</span>
+        <span id="cartDrawerSubtotal">$0.00</span>
+      </div>
+      <button class="btn btn-primary" style="width: 100%; justify-content: center;" onclick="openCheckoutModal()">
+        Proceed to Checkout 💐
+      </button>
+    </div>
+  </aside>
+
+  <!-- CHECKOUT MODAL -->
+  <div class="modal-overlay" id="checkoutModal">
+    <div class="modal-box">
+      <button class="modal-close" onclick="closeCheckoutModal()">&times;</button>
+      <h3 class="serif" style="font-size: 1.5rem; margin-bottom: 8px;">Delivery & Gift Details</h3>
+      <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 20px;">Complete your bouquet order with personalized handwritten card.</p>
+      
+      <form onsubmit="handlePlaceOrder(event)">
+        <div style="margin-bottom: 14px;">
+          <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 4px;">Recipient Name</label>
+          <input type="text" id="custName" required placeholder="e.g. Jane Doe" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; outline: none;">
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 4px;">Delivery Address</label>
+          <input type="text" id="custAddress" required placeholder="Street address, apartment, suite" style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; outline: none;">
+        </div>
+        <div style="margin-bottom: 14px;">
+          <label style="display: block; font-size: 0.82rem; font-weight: 600; margin-bottom: 4px;">Handwritten Card Message (Optional)</label>
+          <textarea id="custMessage" rows="2" placeholder="Write your heartfelt note here..." style="width: 100%; padding: 10px; border: 1px solid var(--border); border-radius: 8px; outline: none; font-family: inherit; font-size: 0.85rem;"></textarea>
+        </div>
+        <div style="margin-bottom: 20px; display: flex; justify-content: space-between; font-weight: 700; font-size: 1.1rem; color: var(--primary);">
+          <span>Grand Total:</span>
+          <span id="checkoutTotal">$0.00</span>
+        </div>
+        <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center;">
+          Place Courier Order Now 🚀
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ORDER SUCCESS MODAL -->
+  <div class="modal-overlay" id="successModal">
+    <div class="modal-box" style="text-align: center;">
+      <div style="font-size: 50px; margin-bottom: 10px;">🎉💐</div>
+      <h3 class="serif" style="font-size: 1.6rem; color: var(--primary); margin-bottom: 8px;">Order Confirmed!</h3>
+      <p style="font-size: 0.9rem; color: var(--text-muted); margin-bottom: 18px;">Thank you! Your artisan bouquet is now being hand-crafted in our cold room atelier.</p>
+      <div style="background: var(--bg); padding: 14px; border-radius: 12px; margin-bottom: 20px;">
+        <span style="font-size: 0.8rem; color: var(--text-muted);">Tracking Code:</span>
+        <h4 id="newOrderIdDisplay" style="color: var(--accent); font-size: 1.3rem; letter-spacing: 1px;">PB-94285</h4>
+      </div>
+      <button class="btn btn-primary" onclick="closeSuccessModal()">Continue Browsing</button>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT APP LOGIC -->
+  <script>
+    // Bouquet Catalog Data
+    const bouquets = [
+      {
+        id: 1,
+        name: 'Elysian Scarlet Rose Symphony',
+        category: 'romantic',
+        price: 69.99,
+        originalPrice: 79.99,
+        tag: 'Bestseller',
+        flowerTypes: '24 Ecuadorian Roses, Baby\'s Breath, Salal',
+        rating: 4.9,
+        reviews: 48,
+        image: 'https://images.unsplash.com/photo-1518895949257-7621c3c786d7?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 2,
+        name: 'Pastel Meadow Peony Romance',
+        category: 'romantic',
+        price: 89.00,
+        originalPrice: null,
+        tag: 'Seasonal',
+        flowerTypes: 'Sarah Bernhardt Peonies, Spray Roses, Eucalyptus',
+        rating: 5.0,
+        reviews: 32,
+        image: 'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 3,
+        name: 'Golden Sunburst Tuscan Joy',
+        category: 'birthday',
+        price: 54.50,
+        originalPrice: 62.00,
+        tag: 'Cheerful',
+        flowerTypes: 'Tuscan Sunflowers, Yellow Ranunculus, Solidago',
+        rating: 4.8,
+        reviews: 29,
+        image: 'https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 4,
+        name: 'Pure Serenity Casablanca Lilies',
+        category: 'sympathy',
+        price: 74.00,
+        originalPrice: null,
+        tag: 'Elegant',
+        flowerTypes: 'White Casablanca Lilies, White Snapdragons, Salal',
+        rating: 4.9,
+        reviews: 21,
+        image: 'https://images.unsplash.com/photo-1582794543139-8ac9cb0f7b11?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 5,
+        name: 'Imperial Royal Orchid Cascades',
+        category: 'luxury',
+        price: 119.00,
+        originalPrice: 135.00,
+        tag: 'Luxury',
+        flowerTypes: 'Phalaenopsis Orchids, White Ranunculus, Silver Ferns',
+        rating: 5.0,
+        reviews: 17,
+        image: 'https://images.unsplash.com/photo-1522083165195-3424ed129620?auto=format&fit=crop&w=800&q=80'
+      },
+      {
+        id: 6,
+        name: 'Vibrant Sunset Dahlia Jubilee',
+        category: 'birthday',
+        price: 64.00,
+        originalPrice: null,
+        tag: 'Bright',
+        flowerTypes: 'Dinnerplate Dahlias, Coral Roses, Hypericum Berries',
+        rating: 4.7,
+        reviews: 38,
+        image: 'https://images.unsplash.com/photo-1561181286-d3fee7d55364?auto=format&fit=crop&w=800&q=80'
+      }
+    ];
+
+    // Cart State
+    let cart = [
+      { id: 1, name: 'Elysian Scarlet Rose Symphony', price: 69.99, qty: 1, image: bouquets[0].image }
+    ];
+
+    // Custom Workshop Selection
+    let customBouquet = {
+      base: 15.00,
+      focal: { name: 'Red Roses', price: 28.00, icon: '🌹' },
+      filler: { name: "Baby's Breath", price: 9.00, icon: '☁️' },
+      greenery: { name: 'Eucalyptus', price: 8.00, icon: '🌿' },
+      wrap: { name: 'Midnight & Silk', price: 6.00, icon: '🎀' }
+    };
+
+    // Render Bouquet Cards
+    function renderBouquets(items) {
+      const grid = document.getElementById('bouquetGrid');
+      if (items.length === 0) {
+        grid.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: var(--text-muted); padding: 40px;">No bouquets match your filter criteria.</p>';
+        return;
+      }
+
+      grid.innerHTML = items.map(b => `
+        <article class="bouquet-card">
+          ${b.tag ? `<span class="card-badge">${b.tag}</span>` : ''}
+          <div class="card-img-wrap">
+            <img src="${b.image}" alt="${b.name}" loading="lazy">
+          </div>
+          <div class="card-body">
+            <span class="card-category">${b.category}</span>
+            <h3 class="card-title">${b.name}</h3>
+            <p class="card-flowers">${b.flowerTypes}</p>
+            <div class="card-rating">
+              <span class="stars">★ ${b.rating}</span>
+              <span>(${b.reviews} verified reviews)</span>
+            </div>
+            <div class="card-footer">
+              <div class="price-box">
+                <span class="current-price">$${b.price.toFixed(2)}</span>
+                ${b.originalPrice ? `<span class="originalPrice">$${b.originalPrice.toFixed(2)}</span>` : ''}
+              </div>
+              <button class="btn-add" onclick="addToCart(${b.id})">
+                + Add to Cart
+              </button>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    }
+
+    // Category Filtering
+    function filterCategory(category, btnElement) {
+      document.querySelectorAll('.filter-btn').forEach(btn => btn.classList.remove('active'));
+      if (btnElement) btnElement.classList.add('active');
+
+      if (category === 'all') {
+        renderBouquets(bouquets);
+      } else {
+        const filtered = bouquets.filter(b => b.category.toLowerCase().includes(category.toLowerCase()));
+        renderBouquets(filtered);
+      }
+    }
+
+    // Search Handler
+    function handleSearch() {
+      const q = document.getElementById('searchInput').value.toLowerCase().trim();
+      const filtered = bouquets.filter(b => 
+        b.name.toLowerCase().includes(q) || 
+        b.flowerTypes.toLowerCase().includes(q) ||
+        b.category.toLowerCase().includes(q)
+      );
+      renderBouquets(filtered);
+    }
+
+    // Cart Management
+    function addToCart(id) {
+      const item = bouquets.find(b => b.id === id);
+      if (!item) return;
+
+      const existing = cart.find(c => c.id === id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({
+          id: item.id,
+          name: item.name,
+          price: item.price,
+          qty: 1,
+          image: item.image
+        });
+      }
+      updateCartUI();
+      toggleCart(true);
+    }
+
+    function changeQty(index, delta) {
+      if (!cart[index]) return;
+      cart[index].qty += delta;
+      if (cart[index].qty <= 0) {
+        cart.splice(index, 1);
+      }
+      updateCartUI();
+    }
+
+    function updateCartUI() {
+      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+      document.getElementById('navCartCount').innerText = totalCount;
+
+      const list = document.getElementById('cartItemsList');
+      if (cart.length === 0) {
+        list.innerHTML = '<p style="text-align: center; color: var(--text-muted); padding: 40px 0;">Your flower cart is empty.<br>Select a bouquet to brighten someone\'s day!</p>';
+        document.getElementById('cartDrawerSubtotal').innerText = '$0.00';
+        return;
+      }
+
+      let subtotal = 0;
+      list.innerHTML = cart.map((item, idx) => {
+        const itemTotal = item.price * item.qty;
+        subtotal += itemTotal;
+        return `
+          <div class="cart-item">
+            <img src="${item.image}" alt="${item.name}" class="cart-item-img">
+            <div class="cart-item-info">
+              <div class="cart-item-title">${item.name}</div>
+              <div class="cart-item-price">$${item.price.toFixed(2)}</div>
+              <div class="qty-controls">
+                <button class="qty-btn" onclick="changeQty(${idx}, -1)">-</button>
+                <span style="font-size: 0.85rem; font-weight: 600;">${item.qty}</span>
+                <button class="qty-btn" onclick="changeQty(${idx}, 1)">+</button>
+              </div>
+            </div>
+          </div>
+        `;
+      }).join('');
+
+      document.getElementById('cartDrawerSubtotal').innerText = `$${subtotal.toFixed(2)}`;
+    }
+
+    function toggleCart(isOpen) {
+      document.getElementById('cartOverlay').classList.toggle('open', isOpen);
+      document.getElementById('cartDrawer').classList.toggle('open', isOpen);
+    }
+
+    // Custom Workshop Selection Logic
+    function selectIngredient(type, name, price, el) {
+      const parentGrid = el.parentElement;
+      parentGrid.querySelectorAll('.ingredient-item').forEach(i => i.classList.remove('selected'));
+      el.classList.add('selected');
+
+      const emoji = el.querySelector('.ingredient-emoji').innerText;
+      customBouquet[type] = { name, price, icon: emoji };
+
+      // Update UI summary
+      if (type === 'focal') {
+        document.getElementById('focalSummary').innerText = `${emoji} ${name}`;
+        document.getElementById('focalPriceSummary').innerText = `$${price.toFixed(2)}`;
+      } else if (type === 'filler') {
+        document.getElementById('fillerSummary').innerText = `${emoji} ${name}`;
+        document.getElementById('fillerPriceSummary').innerText = `$${price.toFixed(2)}`;
+      } else if (type === 'greenery') {
+        document.getElementById('greenerySummary').innerText = `${emoji} ${name}`;
+        document.getElementById('greeneryPriceSummary').innerText = `$${price.toFixed(2)}`;
+      } else if (type === 'wrap') {
+        document.getElementById('wrapSummary').innerText = `${emoji} ${name}`;
+        document.getElementById('wrapPriceSummary').innerText = `$${price.toFixed(2)}`;
+      }
+
+      const total = customBouquet.base + customBouquet.focal.price + customBouquet.filler.price + customBouquet.greenery.price + customBouquet.wrap.price;
+      document.getElementById('customTotalDisplay').innerText = `$${total.toFixed(2)}`;
+    }
+
+    function addCustomBouquetToCart() {
+      const total = customBouquet.base + customBouquet.focal.price + customBouquet.filler.price + customBouquet.greenery.price + customBouquet.wrap.price;
+      const customItem = {
+        id: Date.now(),
+        name: `Custom Bouquet (${customBouquet.focal.name} & ${customBouquet.filler.name})`,
+        price: total,
+        qty: 1,
+        image: 'https://images.unsplash.com/photo-1526047932273-341f2a7631f9?auto=format&fit=crop&w=800&q=80'
+      };
+      cart.push(customItem);
+      updateCartUI();
+      toggleCart(true);
+    }
+
+    // Checkout Flow
+    function openCheckoutModal() {
+      if (cart.length === 0) {
+        alert('Please add at least one bouquet to your cart first.');
+        return;
+      }
+      toggleCart(false);
+      const subtotal = cart.reduce((sum, item) => sum + (item.price * item.qty), 0);
+      document.getElementById('checkoutTotal').innerText = `$${subtotal.toFixed(2)}`;
+      document.getElementById('checkoutModal').classList.add('open');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.remove('open');
+    }
+
+    function handlePlaceOrder(e) {
+      e.preventDefault();
+      const code = 'PB-' + Math.floor(10000 + Math.random() * 90000);
+      document.getElementById('newOrderIdDisplay').innerText = code;
+      document.getElementById('orderTrackInput').value = code;
+      
+      closeCheckoutModal();
+      document.getElementById('successModal').classList.add('open');
+      cart = [];
+      updateCartUI();
+    }
+
+    function closeSuccessModal() {
+      document.getElementById('successModal').classList.remove('open');
+    }
+
+    // Tracking Simulator
+    function trackOrder() {
+      const val = document.getElementById('orderTrackInput').value.trim();
+      if (!val) return;
+      
+      const bar = document.getElementById('timelineBar');
+      bar.style.width = '65%';
+      document.getElementById('trackStatusText').innerHTML = `Order Status: <span style="color: var(--accent);">Out for Courier Delivery 🚚</span> (${val})`;
+    }
+
+    // Initial Launch
+    renderBouquets(bouquets);
+    updateCartUI();
+  </script>
+</body>
+</html>
